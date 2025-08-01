@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.LogDetailSearchPage"
+             Title="EDIT LOG">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Photo -->
+            <Image Source="{Binding SelectedLogEntry.PhotoSource}"
+                   Aspect="AspectFill"
+                   HeightRequest="200"/>
+
+            <!-- Editable Fields -->
+            <Entry Text="{Binding SelectedLogEntry.Location}"
+                   Placeholder="Location"/>
+
+            <Editor Text="{Binding SelectedLogEntry.Description}"
+                    HeightRequest="100"
+                    Placeholder="Description"/>
+
+            <!-- Action Buttons -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button Text="UPDATE"
+                        Grid.Column="0"
+                        BackgroundColor="#512BD4"
+                        TextColor="White"
+                        Command="{Binding UpdateCommand}"/>
+
+                <Button Text="DELETE"
+                        Grid.Column="1"
+                        BackgroundColor="#FF0000"
+                        TextColor="White"
+                        Command="{Binding DeleteCommand}"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

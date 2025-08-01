@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.OnboardingPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="40" Padding="5,40,5,5" >
+
+            <!-- Welcome Title -->
+            <Label 
+                Text="WELCOME" 
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="#512BD4"
+                HorizontalOptions="Center" />
+
+            <!-- App Logo -->
+            <Image 
+                Source="animal.png" 
+                HeightRequest="150" 
+                HorizontalOptions="Center" 
+                Aspect="AspectFit"/>
+
+            <!-- App Name -->
+            <Label 
+                Text="Trail and Tail Log Book" 
+                FontSize="24" 
+                FontAttributes="Bold" 
+                TextColor="#512BD4"
+                HorizontalOptions="Center" />
+            
+            <!-- Action Button -->
+            <Button 
+                Text="Get Started" 
+                BackgroundColor="#512BD4" 
+                TextColor="White"
+                CornerRadius="25"
+                WidthRequest="200"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Clicked="OnGetStartedClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.CreateAccountPage"
+             Title="Create Account"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Spacing="20" Padding="30">
+        <Entry TextColor ="Black" Placeholder="Username" Text="{Binding Username}"/>
+        <Entry TextColor ="Black" Placeholder="Email" Text="{Binding Email}" Keyboard="Email"/>
+        <Entry TextColor ="Black" Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
+        <Entry TextColor ="Black" Placeholder="Confirm Password" Text="{Binding ConfirmPassword}" IsPassword="True"/>
+
+        <Button Text="Create Account" Command="{Binding CreateAccountCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

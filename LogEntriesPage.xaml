@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TrailAndTailLogBook.ViewModels"
+             x:Class="TrailAndTailLogBook.Pages.LogEntriesPage"
+             Title="My Log Entries">
+
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding RefreshCommand}">
+        <Grid RowDefinitions="Auto,*">
+            <!-- Search Bar -->
+            <SearchBar Grid.Row="0"
+                      Placeholder="Search your logs..."
+                      Text="{Binding SearchText}"/>
+
+            <!-- Log Entries List (Read-only) -->
+            <CollectionView Grid.Row="1"
+                          ItemsSource="{Binding FilteredEntries}"
+                          SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="10" Padding="10" CornerRadius="10">
+                            <Grid ColumnDefinitions="Auto,*">
+                                <!-- Entry Photo -->
+                                <Image Source="{Binding Photo, Converter={StaticResource ByteArrayToImageSource}}"
+                                       WidthRequest="80"
+                                       HeightRequest="80"
+                                       Aspect="AspectFill"/>
+
+                                <!-- Entry Details -->
+                                <VerticalStackLayout Grid.Column="1" Padding="10">
+                                    <Label Text="{Binding Title}" 
+                                           FontAttributes="Bold"
+                                           FontSize="Medium"/>
+
+                                    <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"
+                                           FontSize="Small"
+                                           TextColor="Gray"/>
+
+                                    <Label Text="{Binding Location}"
+                                           FontSize="Small"
+                                           TextColor="Gray"/>
+
+                                    <Label Text="{Binding Description}"
+                                           FontSize="Small"
+                                           MaxLines="2"
+                                           LineBreakMode="TailTruncation"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </RefreshView>
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.DeleteLogPage"
+             Title="DELETE LOG">
+
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+        <Label Text="Delete Log"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Are you sure you want to delete this log?"
+               FontSize="18"
+               HorizontalOptions="Center"/>
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+            <Button Text="Proceed"
+                    Grid.Column="0"
+                    BackgroundColor="#FF0000"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="50"
+                    Command="{Binding DeleteLogCommand}"/>
+
+            <Button Text="Back"
+                    Grid.Column="1"
+                    BackgroundColor="#CCCCCC"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    HeightRequest="50"
+                    Command="{Binding CancelCommand}"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.HomePage"
+             BackgroundColor="White"
+             Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+            <!-- Welcome Header -->
+            <Label Text="Welcome!" 
+                   FontSize="28"
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <!-- App Title -->
+            <Label Text="TRAIL AND TAIL LOG" 
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <!-- Action Buttons -->
+            <Button Text="ADD LOG" 
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    Command="{Binding NavigateToAddLogCommand}"/>
+
+            <Button Text="VIEW LOG ENTRIES" 
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    Command="{Binding NavigateToLogEntriesCommand}"/>
+
+            <Button Text="SEARCH" 
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    Command="{Binding NavigateToSearchCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

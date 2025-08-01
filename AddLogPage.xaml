@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrailAndTailLogBook.Pages.AddLogPage"
+             BackgroundColor="WhiteSmoke"
+             Title="Add Log">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label Text="Add New Log Entry" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <Frame HeightRequest="150" 
+                   BackgroundColor="LightGray"
+                   HorizontalOptions="Fill"
+                   Padding="0"
+                   CornerRadius="10">
+                <Image Aspect="AspectFill"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Source="{Binding PhotoSource}"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectPhotoCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Button Text="Take Photo" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White"
+                    Command="{Binding TakePhotoCommand}"/>
+
+            <Button Text="Select Photo" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White"
+                    Command="{Binding SelectPhotoCommand}"/>
+
+            <Entry Placeholder="Title" TextColor="Black"
+                   Text="{Binding Title}"/>
+
+            <Editor Placeholder="Description" TextColor="Black"
+                    HeightRequest="100"
+                    Text="{Binding Description}"/>
+
+            <DatePicker Date="{Binding Date}" TextColor="Grey"/>
+
+            <Entry Placeholder="Location" TextColor="Black"
+                   Text="{Binding Location}"/>
+
+            <Button Text="Save Log" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="50"
+                    Command="{Binding SaveLogCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
