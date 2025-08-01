@@ -1,0 +1,40 @@
+<Shell
+    x:Class="TrailAndTailLogBook.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:TrailAndTailLogBook.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent 
+                Route="HomePage" 
+                ContentTemplate="{DataTemplate pages:HomePage}"
+                Title="Home"/>
+        </Tab>
+        <Tab Title="Logs" Icon="list.png">
+            <ShellContent 
+                Route="LogEntriesPage" 
+                ContentTemplate="{DataTemplate pages:LogEntriesPage}"
+                Title="Log Entries"/>
+        </Tab>
+        <Tab Title="Search" Icon="search.png">
+            <ShellContent 
+                Route="SearchPage" 
+                ContentTemplate="{DataTemplate pages:SearchPage}"
+                Title="Search"/>
+        </Tab>
+    </TabBar>
+
+    <!-- Register all other pages as routes -->
+    <ShellContent Route="OnboardingPage" ContentTemplate="{DataTemplate pages:OnboardingPage}"/>
+    <ShellContent Route="AddLogPage" ContentTemplate="{DataTemplate pages:AddLogPage}"/>
+    <ShellContent Route="EditLogPage" ContentTemplate="{DataTemplate pages:EditLogPage}"/>
+    <ShellContent Route="LogEntryDetailPage" ContentTemplate="{DataTemplate pages:LogEntryDetailPage}"/>
+    <ShellContent Route="LogInPage" ContentTemplate="{DataTemplate pages:LogInPage}"/>
+    <ShellContent Route="CreateAccountPage" ContentTemplate="{DataTemplate pages:CreateAccountPage}"/>
+    <ShellContent Route="LogSavedPage" ContentTemplate="{DataTemplate pages:LogSavedPage}"/>
+    <ShellContent Route="LogDeletedPage" ContentTemplate="{DataTemplate pages:LogDeletedPage}"/>
+    <ShellContent Route="LogDetailSearchPage" ContentTemplate="{DataTemplate pages:LogDetailSearchPage}"/>
+    <ShellContent Route="SaveLogPage" ContentTemplate="{DataTemplate pages:SaveLogPage}"/>
+</Shell>
